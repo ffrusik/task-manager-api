@@ -14,6 +14,7 @@ class TaskService {
   }
 
   create(title) {
+    // validation
     if (typeof title !== "string" || !title.trim()) {
       throw new Error("Title is required");
     }
@@ -35,6 +36,7 @@ class TaskService {
       return null;
     }
 
+    // validation
     if (Object.hasOwn(changes, "title")) {
       if (typeof changes.title !== "string" || !changes.title.trim()) {
         throw new Error("Title is required");
