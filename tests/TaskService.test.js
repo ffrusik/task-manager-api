@@ -20,4 +20,12 @@ describe("TaskService test suite", () => {
   test("rejects a task with an empty title", () => {
     expect(() => service.create(" ")).toThrow("Title is required");
   });
+
+  test("rejects a non-string task title", () => {
+    expect(() => service.create(123)).toThrow("Title is required");
+  });
+
+  test("rejects an undefined task title", () => {
+    expect(() => service.create(undefined)).toThrow("Title is required");
+  });
 });
